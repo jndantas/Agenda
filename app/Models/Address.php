@@ -16,6 +16,6 @@ class Address extends Model
 
     public function costumer()
     {
-        return $this->belongsTo(Costumer::class);
+        return $this->belongsTo(Customer::class);
     }
 }

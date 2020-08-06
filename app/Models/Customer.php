@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Models\Traits\CheckId;
 use Illuminate\Database\Eloquent\Model;
 
-class Costumer extends Model
+class Customer extends Model
 {
     use CheckId;
     public $incrementing = false;
@@ -24,4 +24,8 @@ class Costumer extends Model
         return $this->hasOne(Address::class);
     }
 
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }

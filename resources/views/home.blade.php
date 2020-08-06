@@ -1,7 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.master')
+
+@section('title', 'Home')
+
+@section('breadcrumb_list')
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active">Starter Page</li>
+@endsection
 
 @section('content')
-<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -19,5 +25,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

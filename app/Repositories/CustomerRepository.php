@@ -3,15 +3,15 @@
 
 namespace App\Repositories;
 
-use App\Models\Costumer;
+use App\Models\Customer;
 use App\Repositories\Traits\DefaultQuery;
 
-class CostumerRepository
+class CustomerRepository
 {
 
     use DefaultQuery;
 
-    public function __construct(Costumer $costumer)
+    public function __construct(Customer $costumer)
     {
         $this->model = $costumer;
     }
