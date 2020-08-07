@@ -24,20 +24,20 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('home')}}" class="nav-link {{ Route::current()->getName() == 'home' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-th"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                    <a href="{{route('customer.index')}}" class="nav-link {{ Route::current()->getName() == 'customer.index' ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-address-card"></i>
                         <p>Clientes</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                    <a href="{{route('user.index')}}" class="nav-link {{ Route::current()->getName() == 'user.index' ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-users"></i>
                         <p>Usuários</p>
                     </a>
                 </li>

@@ -2,18 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\CustomerRepository;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class UserController extends Controller
 {
-    private $CostumerRepository;
-
-    public function __construct(CustomerRepository $costumerRepository)
-    {
-        $this->CostumerRepository = $costumerRepository;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +13,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view('customer.index');
+        return view('user.index');
     }
 
     /**
@@ -48,10 +40,10 @@ class CustomerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Costumer  $costumer
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Costumer $costumer)
+    public function show($id)
     {
         //
     }
@@ -59,10 +51,10 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Costumer  $costumer
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Costumer $costumer)
+    public function edit($id)
     {
         //
     }
@@ -71,10 +63,10 @@ class CustomerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Costumer  $costumer
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Costumer $costumer)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -82,10 +74,10 @@ class CustomerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Costumer  $costumer
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Costumer $costumer)
+    public function destroy($id)
     {
         //
     }
