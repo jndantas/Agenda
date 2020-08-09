@@ -2,108 +2,72 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Address;
+use App\Http\Requests\AddressRequest;
 use App\Repositories\AddressRepository;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Exception;
+use Illuminate\Database\QueryException;
+use Illuminate\Http\JsonResponse;
 
+
+/**
+ * Class AddressController
+ * @package App\Http\Controllers
+ */
 class AddressController extends Controller
 {
 
+    /**
+     * @var AddressRepository
+     */
     private $AddressRepository;
 
+    /**
+     * AddressController constructor.
+     * @param AddressRepository $addressRepository
+     */
     public function __construct(AddressRepository $addressRepository)
     {
         $this->AddressRepository = $addressRepository;
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return void
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
+     * @param AddressRequest $request
+     * @return JsonResponse
      */
-    public function store(Request $request)
+    public function store(AddressRequest $request)
     {
-        $address = Address::create([
-            'customer_id' => $request->customer,
-            'cep' => $request->cep,
-            'street' => $request->street,
-            'district' => $request->district,
-            'complement' => $request->complement,
-            'number' => $request->number,
-            'city' => $request->city,
-            'state' => $request->state
-        ]);
-        return response()->json(['code'=>200, 'message'=>'Post Created successfully','data' =>  'ok'], 200);
-    }
+        try {
+            $this->AddressRepository->createAddress($request);
+            return response()->json(['code'=>200, 'message'=>'Novo Endereço criado com sucesso','data' =>  'ok'], 200);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Address  $address
-     * @return Response
-     */
-    public function show($id)
-    {
-        $post = Address::find($id);
+        } catch (QueryException $e) {
+            return response()->json(["error" => true, 'message' => $e->getMessage()]);
+        } catch (Exception $e) {
+            return response()->json(["error" => true, 'message' => $e->getMessage()]);
+        }
 
-        return response()->json($post);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Address  $address
-     * @return Response
-     */
-    public function edit(Address $address)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Address  $address
-     * @return Response
-     */
-    public function update(Request $request, Address $address)
-    {
-        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Address  $address
-     * @return Response
+     * @param $id
+     * @return JsonResponse
      */
     public function destroy($id)
     {
-        $post = Address::find($id)->delete();
+        try {
+            $this->AddressRepository->deleteAddress($id);
+            return response()->json(['success'=>'Endereço Deleted successfully']);
 
-        return response()->json(['success'=>'Endereço Deleted successfully']);
+        } catch (QueryException $e) {
+            return response()->json(["error" => true, 'message' => $e->getMessage()]);
+        } catch (Exception $e) {
+            return response()->json(["error" => true, 'message' => $e->getMessage()]);
+        }
+
     }
 }

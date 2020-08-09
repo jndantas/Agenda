@@ -124,6 +124,12 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function(){
+    $('#cnpj').mask('00.000.000/0000-00');
+    $('#phone').mask('(00) 0000-0000');
+    $('#cep').mask('00000-000');
+});
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

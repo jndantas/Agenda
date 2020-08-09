@@ -37,7 +37,7 @@
                         <td>{{ $c['phone'] }}</td>
                         <td>{{ $c['email'] }}</td>
                         <td>{{ $c['user']['name'] }}</td>
-                        <td>{{ $c['created_at'] }}</td>
+                        <td>{{ $c['created_at']->format('d/m/Y  H:m:s') }}</td>
                         <td>
                             <a href="{{route('customer.show', $c['id'])}}" class="btn btn-primary btn-app">
                                 <i class="fas fa-eye"></i>Ver

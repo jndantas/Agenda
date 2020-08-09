@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\CustomerRequest;
 use App\Repositories\CustomerRepository;
 use App\Repositories\AddressRepository;
 use Illuminate\Contracts\Foundation\Application;
@@ -76,10 +77,10 @@ class CustomerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param CustomerRequest $request
      * @return Application|JsonResponse|RedirectResponse|Redirector
      */
-    public function store(Request $request)
+    public function store(CustomerRequest $request)
     {
         try {
             $this->CostumerRepository->createCustomer($request);
@@ -171,7 +172,7 @@ class CustomerController extends Controller
         try {
             $this->CostumerRepository->deleteCustomer($id);
 
-            return redirect()->back();
+            return redirect(route('customer.index'));
         } catch (QueryException $e) {
             return response()->json(["error" => true, 'message' => $e->getMessage()]);
         } catch (Exception $e) {

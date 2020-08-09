@@ -29,16 +29,16 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <strong><i class="fas fa-book mr-1"></i> Nome da Empresa</strong>
+                                    <strong><i class="fas fa-building mr-1"></i> Nome da Empresa</strong>
                                     <p class="text-muted">{{$customer['enterprise']}}</p>
                                     <hr>
-                                    <strong><i class="fas fa-map-marker-alt mr-1"></i> CNPJ</strong>
+                                    <strong><i class="fas fa-passport mr-1"></i> CNPJ</strong>
                                     <p class="text-muted">{{$customer['cnpj']}}</p>
                                     <hr>
-                                    <strong><i class="fas fa-pencil-alt mr-1"></i> Nome do Responsável</strong>
+                                    <strong><i class="fas fa-user-tie mr-1"></i> Nome do Responsável</strong>
                                     <p class="text-muted">{{$customer['responsible']}}</p>
                                     <hr>
-                                    <strong><i class="far fa-file-alt mr-1"></i> Contato</strong>
+                                    <strong><i class="fas fa-address-book mr-1"></i> Contato</strong>
                                     <p class="text-muted mb-0"><i class="fas fa-phone mr-2"></i>{{$customer['phone']}}</p>
                                     <p class="text-muted"><i class="fas fa-envelope mr-2"></i>{{$customer['email']}}</p>
                                 </div>
@@ -52,7 +52,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <strong><i class="fas fa-book mr-1"></i> CEP</strong>
+                                    <strong><i class="fas fa-street-view mr-1"></i> CEP</strong>
                                     <p class="text-muted">
                                         {{$customer['cep']}}
                                     </p>
@@ -60,7 +60,7 @@
                                     <strong><i class="fas fa-map-marker-alt mr-1"></i> Localização</strong>
                                     <p class="text-muted">{{$customer['city']}}, {{$customer['state']}}</p>
                                     <hr>
-                                    <strong><i class="fas fa-pencil-alt mr-1"></i> Endereço</strong>
+                                    <strong><i class="fas fa-road mr-1"></i> Endereço</strong>
                                     <p class="text-muted">{{$customer['street']}}, {{$customer['number']}}, {{$customer['complement']}}, {{$customer['district']}}</p>
                                 </div>
                                 <!-- /.card-body -->
@@ -68,40 +68,7 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Endereços Cadastrados</h3>
-                                <a href="javascript:void(0)" class="btn btn-outline-info float-right" id="createNewAddress" onclick="addAddress()">
-                                    <i class="fas fa-address-book mr-2"></i>Novo
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    @foreach($addresses as $a)
-                                        <div class="col-md-3">
-                                            <div class="card shadow border-info mb-3" style="max-width: 18rem;">
-                                                <div class="card-header">
-                                                    <div class="custom-control custom-switch">
-                                                        <input data-id="{{$a->id}}" type="checkbox" class="custom-control-input change_address" id="{{$a->id}}">
-                                                        <label class="custom-control-label" for="{{$a->id}}">Tornar Principal</label>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body text-info">
-                                                    <h5 class="card-title">CEP: {{$a['cep']}}</h5>
-                                                    <p class="card-text mb-0">{{$a['city']}}, {{$a['state']}}</p>
-                                                    <p class="card-text">{{$a['street']}}, {{$a['number']}}, {{$a['complement']}}, {{$a['district']}}</p>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <a href="javascript:void(0)" data-id="{{ $a['id'] }}" class="btn btn-sm btn-danger float-right" onclick="deleteAddress(event.target)"><i class="fas fa-trash"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @include('address.index')
                 </div>
             </div>
         </div>

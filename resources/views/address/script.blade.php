@@ -75,8 +75,14 @@
                 });
             },
             error: function(response) {
-                $('#titleError').text(response.responseJSON.errors.title);
-                $('#descriptionError').text(response.responseJSON.errors.description);
+                $('#cepError').text(response.responseJSON.errors.cep);
+                $('#stateError').text(response.responseJSON.errors.state);
+                $('#cityError').text(response.responseJSON.errors.city);
+                $('#districtError').text(response.responseJSON.errors.district);
+                $('#streetError').text(response.responseJSON.errors.street);
+                $('#numberError').text(response.responseJSON.errors.number);
+                $('#complementError').text(response.responseJSON.errors.complement);
+
             }
         });
     }

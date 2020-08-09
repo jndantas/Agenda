@@ -126,6 +126,7 @@ class CustomerRepository
     public function deleteCustomer($id)
     {
         $customer = $this->model->where('id', $id)->firstOrFail();
+        $customer->addresses()->delete();
         $customer->delete();
         alert()->success('Cliente '. $customer->enterprise .' deletado!', 'Deletado');
     }
