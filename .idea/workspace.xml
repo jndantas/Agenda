@@ -23,13 +23,7 @@
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Address.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CustomerRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_185052_create_customers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_185052_create_customers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_185427_create_addresses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_185427_create_addresses_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CustomerSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CustomerSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/AddressRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/AddressRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/customer/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,11 +148,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jai_d\teste\testeanalistajr\www\resources\views\address" />
+      <recent name="C:\Users\jai_d\teste\testeanalistajr\www\app\Models" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jai_d\teste\testeanalistajr\www\resources\views\auth" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jai_d\teste\testeanalistajr\www\app\Models" />
     </key>
   </component>
   <component name="RunManager">
@@ -206,10 +201,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="675" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1596666279567" />
-    <state x="718" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1596933035785">
+    <state x="718" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1596963668504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="718" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1596933035785" />
+    <state x="718" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1596963668504" />
     <state x="615" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1596923212130">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

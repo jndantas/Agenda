@@ -72,7 +72,9 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Endereços Cadastrados</h3>
-                                <a href="{{route('customer.create')}}" class="btn btn-outline-info float-right"><i class="fas fa-address-book "></i>Novo</a>
+                                <button type="button" class="btn btn-outline-info float-right" data-toggle="modal" data-target="#newAddress">
+                                    <i class="fas fa-address-book "></i>Novo
+                                </button>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -100,10 +102,14 @@
                 </div>
             </div>
         </div>
+        <div class="card-footer">
+            <a href="{{route('customer.index')}}" class="btn btn-secondary float-right">Voltar</a>
+        </div>
     </div>
 
 
     @include('customer.delete')
+    @include('address.create')
 
 @endsection
 

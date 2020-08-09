@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Address;
-use App\Models\Customer;
+
 use App\Repositories\CustomerRepository;
+use App\Repositories\AddressRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\QueryException;
@@ -19,11 +19,24 @@ use Exception;
 
 class CustomerController extends Controller
 {
+    /**
+     * @var CustomerRepository
+     */
     private $CostumerRepository;
+    /**
+     * @var AddressRepository
+     */
+    private $AddressRepository;
 
-    public function __construct(CustomerRepository $costumerRepository)
+    /**
+     * CustomerController constructor.
+     * @param CustomerRepository $costumerRepository
+     * @param AddressRepository $addressRepository
+     */
+    public function __construct(CustomerRepository $costumerRepository, AddressRepository $addressRepository)
     {
         $this->CostumerRepository = $costumerRepository;
+        $this->AddressRepository = $addressRepository;
     }
 
     /**
@@ -83,12 +96,13 @@ class CustomerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Costumer  $costumer
-     * @return Response
+     * @param $id
+     * @return Application|Factory|Response|View
      */
-    public function show(Customer $customer)
+    public function show($id)
     {
-        $addresses = Address::where('customer_id', $customer->id)->get();
+        $customer = $this->CostumerRepository->getCustomerId($id);
+        $addresses = $this->AddressRepository->getAddressByCustomers($id);
         return view('customer.show', ['customer' => $customer, 'addresses' => $addresses]);
     }
 
