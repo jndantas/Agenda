@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Repositories\AddressRepository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -44,7 +45,17 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $address = Address::create([
+            'customer_id' => $request->customer,
+            'cep' => $request->cep,
+            'street' => $request->street,
+            'district' => $request->district,
+            'complement' => $request->complement,
+            'number' => $request->number,
+            'city' => $request->city,
+            'state' => $request->state
+        ]);
+        return response()->json(['code'=>200, 'message'=>'Post Created successfully','data' =>  'ok'], 200);
     }
 
     /**
@@ -53,9 +64,11 @@ class AddressController extends Controller
      * @param  \App\Address  $address
      * @return Response
      */
-    public function show(Address $address)
+    public function show($id)
     {
-        //
+        $post = Address::find($id);
+
+        return response()->json($post);
     }
 
     /**
@@ -87,8 +100,10 @@ class AddressController extends Controller
      * @param  \App\Address  $address
      * @return Response
      */
-    public function destroy(Address $address)
+    public function destroy($id)
     {
-        //
+        $post = Address::find($id)->delete();
+
+        return response()->json(['success'=>'Endereço Deleted successfully']);
     }
 }

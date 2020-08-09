@@ -3,7 +3,6 @@
 
 namespace App\Repositories;
 
-use App\Models\Address;
 use App\Models\Customer;
 use App\Repositories\Traits\DefaultQuery;
 
@@ -52,12 +51,19 @@ class CustomerRepository
             'phone' => $request->phone,
             'responsible' => $request->responsible,
             'email' => $request->email,
-            'address_id' => 5,
+            'cep' => $request->cep,
+            'street' => $request->street,
+            'district' => $request->district,
+            'complement' => $request->complement,
+            'number' => $request->number,
+            'city' => $request->city,
+            'state' => $request->state,
+            'address_principal' => 5,
             'user_id' => auth()->user()->id
         ]);
 
         $address = $this->AddressRepository->create([
-            'costumer_id' => $customer['id'],
+            'customer_id' => $customer['id'],
             'cep' => $request->cep,
             'street' => $request->street,
             'district' => $request->district,
@@ -67,7 +73,7 @@ class CustomerRepository
             'state' => $request->state
         ]);
         $customer = $this->model->find($customer['id']);
-        $customer->address_id = $address['id'];
+        $customer->address_principal = $address['id'];
         $customer->save();
 
         alert()->success('Cliente '. $request->enterprise .' criado com Sucesso!', 'Salvo');
@@ -94,6 +100,24 @@ class CustomerRepository
         $data = $request->only(['cnpj', 'enterprise', 'responsible', 'email', 'phone']);
         $customer->update($data);
         alert()->success('Cliente '. $request->enterprise .' atualizado com Sucesso!', 'Atualizado');
+    }
+
+    /**
+     * @param $request
+     */
+    public function updateAddress($request)
+    {
+        $customer = $this->model->find($request->customer_id);
+        $address = $this->AddressRepository->find($request->address_id);
+        $customer->cep = $address->cep;
+        $customer->street = $address->street;
+        $customer->district = $address->district;
+        $customer->complement = $address->complement;
+        $customer->number = $address->number;
+        $customer->city = $address->city;
+        $customer->state = $address->state;
+        $customer->address_principal = $address->id;
+        $customer->save();
     }
 
     /**

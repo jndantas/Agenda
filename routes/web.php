@@ -21,5 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('customer', 'CustomerController');
+    Route::get('changeAddress', 'CustomerController@changeAddress')->name('customer.address');
+    Route::resource('address', 'AddressController');
     Route::resource('user', 'UserController');
 });
