@@ -11,7 +11,7 @@ class Customer extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'enterprise', 'cnpj', 'phone', 'responsible', 'email', 'address_id', 'user_id'
+        'enterprise', 'cnpj', 'phone', 'responsible', 'email', 'user_id','address_principal', 'cep', 'street','district', 'complement', 'number', 'city', 'state'
     ];
 
     public function addresses()
@@ -19,10 +19,6 @@ class Customer extends Model
         return $this->hasMany(Address::class);
     }
 
-    public function address()
-    {
-        return $this->hasOne(Address::class);
-    }
 
     public function user()
     {

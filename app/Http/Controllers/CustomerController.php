@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\Customer;
 use App\Repositories\CustomerRepository;
 use Illuminate\Contracts\Foundation\Application;
@@ -85,9 +86,10 @@ class CustomerController extends Controller
      * @param  \App\Costumer  $costumer
      * @return Response
      */
-    public function show(Customer $costumer)
+    public function show(Customer $customer)
     {
-        return view('customer.show');
+        $addresses = Address::where('customer_id', $customer->id)->get();
+        return view('customer.show', ['customer' => $customer, 'addresses' => $addresses]);
     }
 
     /**
@@ -141,7 +143,7 @@ class CustomerController extends Controller
         try {
             $this->CostumerRepository->deleteCustomer($id);
 
-            return redirect()->back();
+            return redirect(route('customer.index'));
         } catch (QueryException $e) {
             return response()->json(["error" => true, 'message' => $e->getMessage()]);
         } catch (Exception $e) {

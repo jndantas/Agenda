@@ -11,10 +11,10 @@ class Address extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'costumer_id', 'cep', 'street','district', 'complement', 'number', 'city', 'state'
+        'customer_id', 'cep', 'street','district', 'complement', 'number', 'city', 'state'
     ];
 
-    public function costumer()
+    public function customer()
     {
         return $this->belongsTo(Customer::class);
     }

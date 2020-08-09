@@ -52,12 +52,19 @@ class CustomerRepository
             'phone' => $request->phone,
             'responsible' => $request->responsible,
             'email' => $request->email,
-            'address_id' => 5,
+            'cep' => $request->cep,
+            'street' => $request->street,
+            'district' => $request->district,
+            'complement' => $request->complement,
+            'number' => $request->number,
+            'city' => $request->city,
+            'state' => $request->state,
+            'address_principal' => 5,
             'user_id' => auth()->user()->id
         ]);
 
         $address = $this->AddressRepository->create([
-            'costumer_id' => $customer['id'],
+            'customer_id' => $customer['id'],
             'cep' => $request->cep,
             'street' => $request->street,
             'district' => $request->district,
@@ -67,7 +74,7 @@ class CustomerRepository
             'state' => $request->state
         ]);
         $customer = $this->model->find($customer['id']);
-        $customer->address_id = $address['id'];
+        $customer->address_principal = $address['id'];
         $customer->save();
 
         alert()->success('Cliente '. $request->enterprise .' criado com Sucesso!', 'Salvo');
