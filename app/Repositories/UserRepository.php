@@ -28,7 +28,7 @@ class UserRepository
      */
     public function getAll()
     {
-        return $this->model->paginate(12);
+        return $this->model->paginate(15);
     }
 
     /**

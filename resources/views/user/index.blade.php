@@ -74,6 +74,15 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
+            <div class="float-right">
+                @if($users->count())
+                    <div class="row pt-4">
+                        <div class="col">
+                            {{ $users->links() }}
+                        </div>
+                    </div>
+                @endif
+            </div>
         </div>
         <!-- /.card-footer -->
     </div>
