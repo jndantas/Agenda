@@ -17,6 +17,7 @@ class CustomerSeeder extends Seeder
         $user = User::create([
             'name' => 'admin admin',
             'email' => 'admin@admin.com',
+            'role' => 'admin',
             'password' => bcrypt('password')
         ]);
 

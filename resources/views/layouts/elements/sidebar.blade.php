@@ -1,9 +1,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        <img src="{{gravatar()->avatar('jailton.dantass@gmail.com')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">{{ config('app.name', 'Laravel') }}</span>
     </a>
 
     <!-- Sidebar -->
@@ -11,10 +11,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <img src="{{gravatar()->avatar(auth()->user()->email)}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">{{auth()->user()->name}}</a>
             </div>
         </div>
 
@@ -25,26 +25,28 @@
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
                     <a href="{{route('home')}}" class="nav-link {{ Route::current()->getName() == 'home' ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-th text-indigo"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('customer.index')}}" class="nav-link {{ Route::current()->getName() == 'customer.index' ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-address-card"></i>
+                        <i class="nav-icon fas fa-address-card text-teal"></i>
                         <p>Clientes</p>
                     </a>
                 </li>
+                @if(Auth::user()->isAdmin())
                 <li class="nav-item">
                     <a href="{{route('user.index')}}" class="nav-link {{ Route::current()->getName() == 'user.index' ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-users"></i>
+                        <i class="nav-icon fas fa-users text-orange"></i>
                         <p>Usuários</p>
                     </a>
                 </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                   document.getElementById('logout-form').submit();">
-                        <i class="nav-icon fa fa-power-off red"></i>
+                        <i class="nav-icon fa fa-power-off text-danger"></i>
                         <p>
                             {{ __('Logout') }}
                         </p>
