@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 
+=======
+use App\Models\Customer;
+>>>>>>> parent of 4580a20... show customers and addresses
 use App\Repositories\CustomerRepository;
 use App\Repositories\AddressRepository;
 use Illuminate\Contracts\Foundation\Application;
@@ -99,11 +103,17 @@ class CustomerController extends Controller
      * @param $id
      * @return Application|Factory|Response|View
      */
+<<<<<<< HEAD
     public function show($id)
     {
         $customer = $this->CostumerRepository->getCustomerId($id);
         $addresses = $this->AddressRepository->getAddressByCustomers($id);
         return view('customer.show', ['customer' => $customer, 'addresses' => $addresses]);
+=======
+    public function show(Customer $costumer)
+    {
+        return view('customer.show');
+>>>>>>> parent of 4580a20... show customers and addresses
     }
 
     /**
@@ -157,7 +167,7 @@ class CustomerController extends Controller
         try {
             $this->CostumerRepository->deleteCustomer($id);
 
-            return redirect(route('customer.index'));
+            return redirect()->back();
         } catch (QueryException $e) {
             return response()->json(["error" => true, 'message' => $e->getMessage()]);
         } catch (Exception $e) {

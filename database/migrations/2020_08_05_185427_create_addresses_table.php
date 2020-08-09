@@ -15,7 +15,7 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('customer_id');
+            $table->uuid('costumer_id');
             $table->string('cep');
             $table->string('street');
             $table->string('district');

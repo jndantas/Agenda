@@ -21,10 +21,29 @@
   <component name="ChangeListManager">
     <list default="true" id="b69ea2e9-8f72-4d64-ab1e-705a10366d02" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/www.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/www.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/Repositories/AddressRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/AddressRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/customer/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/show.blade.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/Models/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Address.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CustomerRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_185052_create_customers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_185052_create_customers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_185427_create_addresses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_185427_create_addresses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CostumerSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CustomerSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/elements/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/elements/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+>>>>>>> parent of 4580a20... show customers and addresses
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +196,7 @@
       <workItem from="1596754468203" duration="5109000" />
       <workItem from="1596801021007" duration="26000" />
       <workItem from="1596841333582" duration="9315000" />
-      <workItem from="1596920307132" duration="15475000" />
+      <workItem from="1596920307132" duration="11601000" />
     </task>
     <servers />
   </component>
