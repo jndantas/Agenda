@@ -83,8 +83,8 @@
                                             <div class="card shadow border-info mb-3" style="max-width: 18rem;">
                                                 <div class="card-header">
                                                     <div class="custom-control custom-switch">
-                                                        <input data-id="{{$a->id}}" type="checkbox" class="custom-control-input change_address" id="customSwitch1">
-                                                        <label class="custom-control-label" for="customSwitch1">Tornar Principal</label>
+                                                        <input data-id="{{$a->id}}" type="checkbox" class="custom-control-input change_address" id="{{$a->id}}">
+                                                        <label class="custom-control-label" for="{{$a->id}}">Tornar Principal</label>
                                                     </div>
                                                 </div>
                                                 <div class="card-body text-info">
@@ -114,64 +114,6 @@
     @include('customer.delete')
     @include('address.create')
 
-    <div class="modal fade" id="newAddress">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Novo Endereço</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="" id="modalFormData">
-                    <input type="hidden" name="address_id" id="address_id">
-                    <div class="modal-body">
-                        <div class="form-row">
-                            <div class="form-group col-md-3">
-                                <label for="cep">CEP</label>
-                                <input type="text" class="form-control" name="cep" id="cep" value="" size="10" maxlength="9">
-                            </div>
-                            <div class="form-group col-md-1">
-                                <label for="uf">Estado</label>
-                                <input type="text" id="uf" name="state" size="2" readonly class="form-control-plaintext">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="cidade">Cidade</label>
-                                <input type="text" id="cidade" name="city" size="40" readonly class="form-control-plaintext">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="bairro">Bairro</label>
-                                <input type="text" name="district" id="bairro" size="40" readonly class="form-control-plaintext">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-
-                            <div class="form-group col-md-6">
-                                <label for="rua">Endereço</label>
-                                <input type="text" name="street" id="rua" size="60" readonly class="form-control-plaintext">
-                            </div>
-                            <div class="form-group col-md-2">
-                                <label for="number">Número</label>
-                                <input type="text" id="number" name="number" class="form-control">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="complement">Complemento</label>
-                                <input type="text" id="complement" name="complement" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="createAddress()">Salvar</button>
-                    </div>
-                </form>
-
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
 
 
 @endsection
@@ -179,110 +121,6 @@
 @section('js_after')
 
     @include('customer.script')
+    @include('address.script')
 
-    <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $(function() {
-            $('.change_address').change(function () {
-                var customer_id = '{{$customer['id']}}';
-                var address_id = $(this).data('id');
-                $.ajax({
-                    type: "GET",
-                    dataType: "json",
-                    url: '{{route('customer.address')}}',
-                    data: {
-                        'customer_id': customer_id,
-                        'address_id': address_id
-                    },
-
-                    success: function(data){
-                        console.log(data.success)
-                        Swal.fire(
-                            'Sucesso!',
-                            'Endereço principal atualizado com sucesso!',
-                            'success'
-                        ).then(function() {
-                            window.location = '{{ route('customer.show', $customer['id']) }}';
-                        });
-                    }
-                });
-            })
-        });
-
-        function addAddress() {
-            $('#modalFormData').trigger("reset");
-            $('#newAddress').modal('show');
-        }
-
-        function createAddress() {
-            var customer = '{{$customer['id']}}';
-            var cep = $('#cep').val();
-            var state = $('#uf').val();
-            var city = $('#cidade').val();
-            var district = $('#bairro').val();
-            var street = $('#rua').val();
-            var number = $('#number').val();
-            var complement = $('#complement').val();
-            var id = $('#address_id').val();
-
-            let _url = '{{ route('address.store') }}';
-
-            $.ajax({
-                url: _url,
-                type: "POST",
-                data: {
-                    id: id,
-                    customer: customer,
-                    cep: cep,
-                    state: state,
-                    city: city,
-                    district: district,
-                    street: street,
-                    number: number,
-                    complement: complement,
-                },
-                success:function(data){
-                    $('#newAddress').modal('hide');
-                    Swal.fire(
-                        'Sucesso!',
-                        'Novo Endereço cadastrado(a) com sucesso!',
-                        'success'
-                    ).then(function() {
-                        window.location = '{{ route('customer.show', $customer['id']) }}';
-                    });
-                },
-                error: function(response) {
-                    $('#titleError').text(response.responseJSON.errors.title);
-                    $('#descriptionError').text(response.responseJSON.errors.description);
-                }
-            });
-        }
-
-        function deleteAddress(event) {
-            var id  = $(event).data("id");
-            let _url = `/address/${id}`;
-
-            $.ajax({
-                url: _url,
-                type: 'DELETE',
-                data: {
-                },
-                success: function(response) {
-                    Swal.fire(
-                        'Sucesso!',
-                        'Endereço Apagado com sucesso!',
-                        'success'
-                    ).then(function() {
-                        window.location = '{{ route('customer.show', $customer['id']) }}';
-                    });
-                }
-            });
-        }
-
-    </script>
 @endsection
