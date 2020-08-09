@@ -21,15 +21,24 @@
   <component name="ChangeListManager">
     <list default="true" id="b69ea2e9-8f72-4d64-ab1e-705a10366d02" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/www.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/www.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Address.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CustomerRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_185052_create_customers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_185052_create_customers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_05_185427_create_addresses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_05_185427_create_addresses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CostumerSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CustomerSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/elements/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/elements/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +144,7 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/realrashid/sweet-alert" />
     </include_path>
   </component>
   <component name="ProjectId" id="1fghyQgNq9Fdv2sVKaUnzueoNXZ" />
@@ -179,7 +189,8 @@
       <workItem from="1596716761322" duration="1277000" />
       <workItem from="1596754468203" duration="5109000" />
       <workItem from="1596801021007" duration="26000" />
-      <workItem from="1596841333582" duration="393000" />
+      <workItem from="1596841333582" duration="9315000" />
+      <workItem from="1596920307132" duration="11601000" />
     </task>
     <servers />
   </component>
@@ -203,14 +214,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="675" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1596666279567" />
-    <state x="615" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1596755392599">
+    <state x="718" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1596933035785">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="615" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596755392599" />
-    <state x="624" y="216" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1596656997305">
+    <state x="718" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1596933035785" />
+    <state x="615" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1596923212130">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="624" y="216" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596656997305" />
+    <state x="615" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596923212130" />
+    <state x="624" y="216" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1596931928474">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="216" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596931928474" />
     <state x="703" y="188" key="NewPhpClassDialog" timestamp="1596656972161">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -11,7 +11,7 @@ class Customer extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'enterprise', 'cnpj', 'phone', 'responsible', 'email', 'address_id'
+        'enterprise', 'cnpj', 'phone', 'responsible', 'email', 'address_id', 'user_id'
     ];
 
     public function addresses()
@@ -26,6 +26,6 @@ class Customer extends Model
 
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 }

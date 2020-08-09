@@ -53,6 +53,8 @@
 <!-- ./wrapper -->
 
 <script src="{{ asset('js/app.js') }}"></script>
+@include('sweetalert::alert')
 
+@yield('js_after')
 </body>
 </html>

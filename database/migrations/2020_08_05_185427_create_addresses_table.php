@@ -18,7 +18,8 @@ class CreateAddressesTable extends Migration
             $table->uuid('costumer_id');
             $table->string('cep');
             $table->string('street');
-            $table->string('complement');
+            $table->string('district');
+            $table->string('complement')->nullable();
             $table->string('number');
             $table->string('city');
             $table->string('state');

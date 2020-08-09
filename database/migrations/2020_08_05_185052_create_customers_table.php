@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCostumersTable extends Migration
+class CreateCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreateCostumersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('costumer_id');
+            $table->uuid('user_id');
             $table->string('enterprise');
             $table->string('cnpj');
             $table->string('phone');
